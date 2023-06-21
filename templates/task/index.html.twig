@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TaskController!{% endblock %}
+{% block body %}
+<div class="body mx-5 container">
+    <div class="row row-cols-3 row-cols-md-3 row-cols-sm-3 g-2 m-0">
+        {% for task in tasks %}
+        <div class="col-sm">
+            <div class="card rounded">
+                <div class="colored-line rounded-pill mx-3 my-3" style="height: 8px; width: 64px; background: red"></div>
+                <div class="card-body">
+                    <div class="name">
+                        <h6>{{ task.name }}</h6>
+                        <div class="fw-light lh-lg d-flex" style="font-size: 14px;">
+                            <p class="text-muted m-0" style="    white-space: nowrap; /* Запрещаем перенос строк */
+                        overflow: hidden; /* Обрезаем все, что не помещается в область */
+                        text-overflow: ellipsis; /* Добавляем многоточие */">{{ task.description }}</p>
+                        </div>
+                        <div class="fw-light lh-lg d-flex" style="font-size: 14px;">
+                            <p class="text-muted m-0">Истекает: </p>
+                            <p class="mx-1 fw-bold text-dark m-0">{{ task.expiredAt|date("d-m-Y h:m") }}</p>
+                        </div>
+                        <div class="lh-lg d-flex" style="font-size: 14px;">
+                            <p class="fw-light text-muted m-0">Ответственный: </p>
+                            <p class="mx-1 fw-bold text-dark m-0">{{ task.executor }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

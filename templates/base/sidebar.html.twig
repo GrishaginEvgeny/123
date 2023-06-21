@@ -1,0 +1,43 @@
+<style>
+    .nav-link:hover{
+        background: var(--bs-gray-500);
+    }
+</style>
+<div class="d-flex flex-column flex-shrink-0 p-3 border-end border-light border-1 text-dark bg-white" style="width: 280px; height: 100vh">
+    <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1101_1352)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.2 0H12.8V8.27451L6.94904 2.42355L2.42355 6.94902L8.27453 12.8H0V19.2H8.27451L2.42355 25.0509L6.94904 29.5765L12.8 23.7254V32H19.2V23.7254L25.051 29.5765L29.5765 25.051L23.7254 19.2H32V12.8H23.7254L29.5765 6.94902L25.051 2.42354L19.2 8.27451V0Z" fill="#0D1421"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_1101_1352">
+                    <rect width="32" height="32" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+        <span class="fs-4 mx-3 fw-bold lh-lg">Вариант 12</span>
+    </div>
+    {% if tasks is not null %}
+    <div class="my-3">
+        <input class="form-control" placeholder="Поиск">
+    </div>
+    <div class="mb-2 fw-bolder">
+        <a>Все проекты</a>
+    </div>
+    <ul class="nav nav-pills flex-column mb-auto mx-3 fw-bolder">
+        {% for task in tasks %}
+            <li>
+                <a href="{{ path('app_task_show', {'id': task.id}) }}" class="nav-link text-dark" aria-current="page">
+                    {{ task.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="bottom mt-auto fw-light text-muted" style="line-height: 8px; font-size: 16px">
+        <a class="btn btn-dark my-3" href="{{ path('app_task_new') }}">Создать новую задачу</a>
+        <p>© Вариант 12.</p>
+        <p>Анна Рябинина,</p>
+        <p>Группа ПМ-19-2</p>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<header class="d-flex justify-content-lg-between align-items-center py-3 border-bottom border-light border-1 px-0">
+    <h3 class="fw-bold mx-5 my-0 lh-lg">
+        {{ title }}
+    </h3>
+    {% if tasks in not null %}
+    <div class="d-flex mx-5">
+        <select class="form-select">
+            <option value="asc" selected>По возрастанию</option>
+            <option value="desc">По убыванию</option>
+        </select>
+
+        <a class="mx-2 btn btn-dark">Применить</a>
+    </div>
+    {% endif %}
+</header>

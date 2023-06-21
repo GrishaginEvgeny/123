@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {{ include('ttt/_form.html.twig', {'button_label': 'Обновить'}) }}
+
+    <a href="{{ path('app_index') }}">Назад</a>
+
+    {{ include('ttt/_delete_form.html.twig') }}
+{% endblock %}

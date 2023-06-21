@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Task{% endblock %}
+
+{% block body %}
+    <div class="mx-3">
+        {{ include('ttt/_form.html.twig') }}
+        <a class="btn btn-dark" href="{{ path('app_index') }}">Назад</a>
+    </div>
+{% endblock %}
